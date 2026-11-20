@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acsetic | Your Natural Products Marketplace</title>
+  <meta name="description" content="Discover natural products from sellers across Nigeria.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div>
+      <div class="brand">ACSETIC</div>
+      <div class="tag">Your Natural Products Marketplace</div>
+    </div>
+    <nav>
+      <a href="#shop">Shop</a>
+      <a href="#seller">Become a seller</a>
+      <a href="#cart">Cart (<span id="cartCount">0</span>)</a>
+      <a href="#admin">Admin demo</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">NATURAL • LOCAL • DISCOVERABLE</p>
+      <h1>Find natural products from trusted sellers.</h1>
+      <p>Discover herbs, natural oils, skincare and other carefully reviewed natural products from vendors across Nigeria.</p>
+      <div class="searchrow">
+        <input id="search" type="search" placeholder="Search natural products..." aria-label="Search products">
+        <button id="searchButton" type="button">Search</button>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="leaf">🌿</div>
+      <h2>Buy Natural. Sell Natural.</h2>
+      <p>A marketplace concept built around seller verification and product review.</p>
+    </div>
+  </section>
+
+  <main>
+    <section id="shop">
+      <div class="sectionhead">
+        <div>
+          <h2>Shop by category</h2>
+          <p class="sub">Explore the Acsetic marketplace</p>
+        </div>
+      </div>
+      <div class="categories">
+        <div class="category"><b>🌿</b>Herbs &amp; botanicals</div>
+        <div class="category"><b>🫙</b>Natural oils</div>
+        <div class="category"><b>🧼</b>Skincare</div>
+        <div class="category"><b>🍯</b>Natural foods</div>
+        <div class="category"><b>🧪</b>Herbal products*</div>
+      </div>
+
+      <div class="sectionhead">
+        <div>
+          <h2>Featured products</h2>
+          <p class="sub">Sample listings for the website prototype</p>
+        </div>
+      </div>
+      <div class="filters">
+        <select id="categoryFilter" aria-label="Filter by category">
+          <option value="">All categories</option>
+          <option>Herbs &amp; botanicals</option>
+          <option>Natural oils</option>
+          <option>Skincare</option>
+          <option>Natural foods</option>
+          <option>Herbal products</option>
+        </select>
+        <select id="sort" aria-label="Sort products">
+          <option value="featured">Sort: Featured</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+        </select>
+      </div>
+      <div id="products" class="products"></div>
+    </section>
+
+    <section id="cart" class="panel">
+      <h2>Your cart</h2>
+      <p class="sub">Review your items before checkout</p>
+      <div id="cartItems"><p class="small">Your cart is empty.</p></div>
+      <p><strong>Total: <span id="cartTotal">₦0</span></strong></p>
+      <button type="button" id="checkoutButton">Proceed to payment (demo)</button>
+      <p class="small">Demo only: no real payment is collected.</p>
+    </section>
+
+    <section id="seller" class="panel">
+      <h2>Become an Acsetic seller</h2>
+      <p class="sub">Submit your shop and product for review</p>
+      <form id="sellerForm">
+        <div class="formgrid">
+          <input name="seller" placeholder="Your full name" required>
+          <input name="email" type="email" placeholder="Email address" required>
+          <input name="phone" placeholder="Phone number" required>
+          <input name="location" placeholder="Town / State" required>
+          <input name="product" placeholder="Product name" required>
+          <select name="category" required>
+            <option value="">Choose product category</option>
+            <option>Herbs &amp; botanicals</option>
+            <option>Natural oils</option>
+            <option>Skincare</option>
+            <option>Natural foods</option>
+            <option>Herbal products</option>
+          </select>
+          <input name="price" type="number" min="0" step="0.01" placeholder="Price in naira (₦)" required>
+          <input name="reg" placeholder="Applicable NAFDAC / registration number (if relevant)">
+          <textarea class="full" name="description" rows="3" placeholder="Describe your product" required></textarea>
+          <label class="full check"><input type="checkbox" name="confirm" required> I confirm that the information is accurate and that I will provide applicable regulatory documents for review.</label>
+        </div>
+        <button type="submit">Submit for admin approval</button>
+        <p id="sellerMsg" class="small" role="status"></p>
+      </form>
+      <div class="notice">Submitting a listing does not mean it is approved. Products remain unpublished until Acsetic verifies the seller, product information and all applicable regulatory requirements.</div>
+    </section>
+
+    <section id="admin" class="panel">
+      <h2>Admin review desk</h2>
+      <p class="sub">Prototype view of seller submissions stored in this browser only</p>
+      <button type="button" id="refreshButton">Refresh</button>
+      <div id="submissions"><p class="small">No seller submissions yet.</p></div>
+      <div class="notice">Safety first: Herbal medicinal products, including Agbo sold as medicine, must meet applicable Nigerian regulatory requirements. This demo does not verify NAFDAC registration, approve products, or authorize medical claims. Do not publish medicinal products until the required checks are completed.</div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>ACSETIC</strong><br>
+    Your Natural Products Marketplace
+    <p>This is an early interactive prototype. Sample products and prices are illustrative, not real offers. No real accounts, database, orders, delivery, or payments are connected.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
